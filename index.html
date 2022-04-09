@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Campominato</title>
+</head>
+<body>
+    <header>
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <h1>Campominato</h1>
+            <div>
+                <label for="level">
+                    difficolà:
+                    <select name="level" id="level">
+                        <option value="1" selected>Easy</option>
+                        <option value="2">Hard</option>
+                        <option value="3">Crazy</option>
+                    </select>
+
+                </label>
+               
+                <label for="play">
+                    <button id="play" type="button">play</button>
+                </label>
+            </div>
+        </div>
+        
+    </header>
+   
+    <main>
+        <div class="container d-flex justify-content-center align-items-center h-100 text-center " id="app">
+            <h2> Selziona il livello di difficolà e genera la griglia</h2> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="container d-flex align-items-center h-100">
+            made width &hearts; by <a href="#">Boolean</a>
+        </div>
+
+
+    </footer>
+
+    
+    
+    
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
