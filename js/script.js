@@ -1,9 +1,13 @@
-// function getRandomInt(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max -min) + min);
-// }
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max -min) + min);
+}
 
+const BOMB_NUMBER = 16;
+let bombs = [];
+let tentativi;
+let tentativiEfetuati = 1;
 
 
 function setLevel(){
@@ -25,11 +29,23 @@ function setLevel(){
 
            
     }
-    let numRige = Math.sqrt(numCol)
-    console.log("celle per lato: ", numRige )
+let numRige = Math.sqrt(numCol)
+console.log("celle per lato: ", numRige )
 generaGriglia(numCol, numRige); 
+generateBomb(numCol)
+
 }
 
+function generateBomb (numCol){
+    tentativi = numCol - BOMB_NUMBER
+    while (bombs.length < BOMB_NUMBER) {
+        let bombNumber = getRandomInt(1, numCol);
+        if(!bombs.includes(bombNumber)){
+            bombs.push(bombNumber)
+        }
+    }
+    console.log(bombs)
+}
 
     
 
@@ -58,10 +74,22 @@ function generaCol(numCol, numRige){
 }
 
 function coloraCella(){
-    console.log(this);
-    this.style.backgroundColor = '#6495ed';
+    //console.log(this);
+    let num = parseInt(this.innerText);
+    if (bombs.includes(num)) {
+        this.style.backgroundColor = 'red';
+        //this.innerHTML = <img src./.....>
+    } else{
+        this.style.backgroundColor = '#6495ed';
+    }
+
     this.classList.remove("pointer")
     this.removeEventListener("click", coloraCella);
+}
+
+function gameOver(){
+
+
 }
 
 document.getElementById("play").addEventListener("click", setLevel);
