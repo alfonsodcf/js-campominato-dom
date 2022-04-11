@@ -79,6 +79,8 @@ function coloraCella(){
     if (bombs.includes(num)) {
         this.style.backgroundColor = 'red';
         //this.innerHTML = <img src./.....>
+        //function gameOver()
+
     } else{
         this.style.backgroundColor = '#6495ed';
     }
@@ -87,10 +89,13 @@ function coloraCella(){
     this.removeEventListener("click", coloraCella);
 }
 
-function gameOver(){
 
+// function gameOver(){
+//  let loser = document.createElement('h2')
+//  loser.style.color = 'red';
+//  loser.innerHTML= 'GAME OVER';
 
-}
+// }
 
 document.getElementById("play").addEventListener("click", setLevel);
 
